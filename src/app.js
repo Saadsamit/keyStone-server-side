@@ -5,12 +5,13 @@ const connectDB = require("./db/connectDB");
 const app = express();
 const port = process.env.PORT || 5000;
 const authRoute = require('./routes/v1/auth');
+const allProperties = require('./routes/v1/allPropertie')
 const applyMiddlewares = require("./middlewares");
 
 applyMiddlewares(app);
 app.use(authRoute)
-
-app.get("/", (req, res) => {
+app.use(allProperties)
+app.get("/api", (req, res) => {
   res.send("server is running");
 });
 
