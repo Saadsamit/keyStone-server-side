@@ -7,12 +7,14 @@ const port = process.env.PORT || 5000;
 const authRoute = require('./routes/v1/auth');
 const allProperties = require('./routes/v1/allPropertie')
 const PropertieDetail = require('./routes/v1/PropertieDetail');
+const newUser = require('./routes/v1/newUser');
 const applyMiddlewares = require("./middlewares");
 
 applyMiddlewares(app);
 app.use(authRoute)
 app.use(allProperties)
 app.use(PropertieDetail)
+app.use(newUser)
 app.get("/api", (req, res) => {
   res.send("server is running");
 });
