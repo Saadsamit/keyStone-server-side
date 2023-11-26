@@ -1,48 +1,47 @@
 const { Schema, model } = require("mongoose");
 
 const PropertiesSchema = new Schema({
-  "property": {
-    "image": {
+  property: {
+    image: {
       type: String,
       required: true,
     },
-    "title": {
+    title: {
       type: String,
       required: true,
     },
-    "location": {
+    location: {
       type: String,
       required: true,
     },
-    "details": {
+    details: {
       type: String,
       required: true,
     },
-    "PriceRange": {
-      type: String,
-      required: true,
-    },
-  },
-  "agent": {
-    "name": {
-      type: String,
-      required: true,
-    },
-    "image": {
-      type: String,
-      required: true,
-    },
-    "email": {
+    PriceRange: {
       type: String,
       required: true,
     },
   },
-  "status": {
+  agent: {
+    name: {
+      type: String,
+      required: true,
+    },
+    image: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+    },
+  },
+  status: {
     type: String,
     default: "pending",
   },
 });
 
-
-const Propertie = model('Propertie', PropertiesSchema)
-module.exports = Propertie
+const Propertie = model("Propertie", PropertiesSchema);
+module.exports = Propertie;
