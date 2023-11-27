@@ -12,6 +12,8 @@ const getRole = require('./routes/v1/getRole');
 const getUser = require('./routes/v1/getUser');
 const newUser = require('./routes/v1/newUser');
 const updateUser = require('./routes/v1/updateUser');
+const getReviewByEmail = require('./routes/v1/getReviewByEmail');
+const deleteReview = require('./routes/v1/deleteReview');
 const postReview = require('./routes/v1/postReview');
 const applyMiddlewares = require("./middlewares");
 
@@ -23,6 +25,8 @@ app.use(newUser)
 app.use(updateUser)
 app.use(postReview)
 app.use(getRole)
+app.use(getReviewByEmail)
+app.use(deleteReview)
 app.use(getUser)
 app.use(getReview)
 app.get("/api", (req, res) => {
