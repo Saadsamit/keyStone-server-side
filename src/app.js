@@ -14,7 +14,10 @@ const newUser = require('./routes/v1/newUser');
 const updateUser = require('./routes/v1/updateUser');
 const getReviewByEmail = require('./routes/v1/getReviewByEmail');
 const deleteReview = require('./routes/v1/deleteReview');
+const postWishlist = require('./routes/v1/postWishlist');
 const postReview = require('./routes/v1/postReview');
+const getWishlist = require('./routes/v1/getWishlist');
+const deleteWishlist = require('./routes/v1/deleteWishlist');
 const applyMiddlewares = require("./middlewares");
 
 applyMiddlewares(app);
@@ -27,7 +30,10 @@ app.use(postReview)
 app.use(getRole)
 app.use(getReviewByEmail)
 app.use(deleteReview)
+app.use(postWishlist)
 app.use(getUser)
+app.use(getWishlist)
+app.use(deleteWishlist)
 app.use(getReview)
 app.get("/api", (req, res) => {
   res.send("server is running");
