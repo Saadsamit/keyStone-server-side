@@ -18,6 +18,10 @@ const postWishlist = require('./routes/v1/postWishlist');
 const postReview = require('./routes/v1/postReview');
 const getWishlist = require('./routes/v1/getWishlist');
 const deleteWishlist = require('./routes/v1/deleteWishlist');
+const postPropertyBought = require('./routes/v1/postPropertyBought');
+const createPaymentIntent = require('./routes/v1/create-payment-intent');
+const getMyPropertie = require('./routes/v1/getMyPropertie');
+const updatePropertyBought = require('./routes/v1/updatePropertyBought');
 const applyMiddlewares = require("./middlewares");
 
 applyMiddlewares(app);
@@ -34,6 +38,10 @@ app.use(postWishlist)
 app.use(getUser)
 app.use(getWishlist)
 app.use(deleteWishlist)
+app.use(postPropertyBought)
+app.use(createPaymentIntent)
+app.use(getMyPropertie)
+app.use(updatePropertyBought)
 app.use(getReview)
 app.get("/api", (req, res) => {
   res.send("server is running");
