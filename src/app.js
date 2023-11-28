@@ -22,6 +22,11 @@ const postPropertyBought = require('./routes/v1/postPropertyBought');
 const createPaymentIntent = require('./routes/v1/create-payment-intent');
 const getMyPropertie = require('./routes/v1/getMyPropertie');
 const updatePropertyBought = require('./routes/v1/updatePropertyBought');
+const addPropertie = require('./routes/v1/addPropertie');
+const getaddedProperties = require('./routes/v1/getaddedProperties');
+const deleteProperties = require('./routes/v1/deleteProperties');
+const getAProperties = require('./routes/v1/getAProperties');
+const updatePropertie = require('./routes/v1/updatePropertie');
 const applyMiddlewares = require("./middlewares");
 
 applyMiddlewares(app);
@@ -42,6 +47,11 @@ app.use(postPropertyBought)
 app.use(createPaymentIntent)
 app.use(getMyPropertie)
 app.use(updatePropertyBought)
+app.use(addPropertie)
+app.use(getaddedProperties)
+app.use(deleteProperties)
+app.use(getAProperties)
+app.use(updatePropertie)
 app.use(getReview)
 app.get("/api", (req, res) => {
   res.send("server is running");

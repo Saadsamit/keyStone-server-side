@@ -6,7 +6,6 @@ router.delete("/api/v1/deleteReview/:id", async (req, res) => {
   let query = {
     _id: id,
   };
-  console.log(id);
   try {
     const deleteReview = await Review.deleteOne(query);
     res.send(deleteReview);
