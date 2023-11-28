@@ -27,6 +27,9 @@ const getaddedProperties = require('./routes/v1/getaddedProperties');
 const deleteProperties = require('./routes/v1/deleteProperties');
 const getAProperties = require('./routes/v1/getAProperties');
 const updatePropertie = require('./routes/v1/updatePropertie');
+const RequestedProperties = require('./routes/v1/RequestedProperties');
+const getSoldPropertie = require('./routes/v1/getSoldPropertie');
+const putRequesed = require('./routes/v1/putRequesed');
 const applyMiddlewares = require("./middlewares");
 
 applyMiddlewares(app);
@@ -52,6 +55,9 @@ app.use(getaddedProperties)
 app.use(deleteProperties)
 app.use(getAProperties)
 app.use(updatePropertie)
+app.use(RequestedProperties)
+app.use(getSoldPropertie)
+app.use(putRequesed)
 app.use(getReview)
 app.get("/api", (req, res) => {
   res.send("server is running");
