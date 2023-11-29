@@ -1,7 +1,9 @@
 const router = require("express").Router();
+const isClient = require("../../middlewares/isClient");
+const verifyToken = require("../../middlewares/verifyToken");
 const Wishlist = require("../../models/wishlist");
 
-router.delete("/api/v1/delete-Wishlist/:id", async (req, res) => {
+router.delete("/api/v1/delete-Wishlist/:id",verifyToken,isClient, async (req, res) => {
   const id = req.params.id;
   const query = { _id: id };
   try {

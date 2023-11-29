@@ -1,7 +1,9 @@
 const router = require("express").Router();
+const isClient = require("../../middlewares/isClient");
+const verifyToken = require("../../middlewares/verifyToken");
 const Review = require("../../models/Review");
 
-router.post("/api/v1/post-review", async (req, res) => {
+router.post("/api/v1/post-review",verifyToken,isClient, async (req, res) => {
   const data = req.body;
   const query = { propertyId: data.propertyId, userEmail: data.userEmail };
   try {

@@ -33,40 +33,48 @@ const putRequesed = require('./routes/v1/putRequesed');
 const adminManageProperties = require('./routes/v1/adminManageProperties');
 const adminAdvertiseProperty = require('./routes/v1/adminAdvertiseProperty');
 const getAdvertise = require('./routes/v1/getAdvertise');
+const ManageUsers = require('./routes/v1/ManageUsers');
 const applyMiddlewares = require("./middlewares");
 
 applyMiddlewares(app);
-app.use(authRoute)
-app.use(allProperties)
-app.use(PropertieDetail)
-app.use(newUser)
-app.use(updateUser)
-app.use(postReview)
-app.use(getRole)
-app.use(getReviewByEmail)
-app.use(deleteReview)
-app.use(postWishlist)
-app.use(getUser)
-app.use(getWishlist)
-app.use(deleteWishlist)
-app.use(postPropertyBought)
-app.use(createPaymentIntent)
-app.use(getMyPropertie)
-app.use(updatePropertyBought)
-app.use(addPropertie)
-app.use(getaddedProperties)
-app.use(deleteProperties)
-app.use(getAProperties)
-app.use(updatePropertie)
-app.use(RequestedProperties)
-app.use(getSoldPropertie)
-app.use(putRequesed)
-app.use(adminManageProperties)
-app.use(adminAdvertiseProperty)
-app.use(getAdvertise)
-app.use(getReview)
+try{
+  app.use(authRoute)
+  app.use(allProperties)
+  app.use(PropertieDetail)
+  app.use(newUser)
+  app.use(updateUser)
+  app.use(postReview)
+  app.use(getRole)
+  app.use(getReviewByEmail)
+  app.use(deleteReview)
+  app.use(postWishlist)
+  app.use(getUser)
+  app.use(getWishlist)
+  app.use(deleteWishlist)
+  app.use(postPropertyBought)
+  app.use(createPaymentIntent)
+  app.use(getMyPropertie)
+  app.use(updatePropertyBought)
+  app.use(addPropertie)
+  app.use(getaddedProperties)
+  app.use(deleteProperties)
+  app.use(getAProperties)
+  app.use(updatePropertie)
+  app.use(RequestedProperties)
+  app.use(getSoldPropertie)
+  app.use(putRequesed)
+  app.use(adminManageProperties)
+  app.use(adminAdvertiseProperty)
+  app.use(getAdvertise)
+  app.use(ManageUsers)
+  app.use(getReview)
+}
+catch(error){
+  console.log(error);
+}
+
 app.get("/api", (req, res) => {
-  res.send("server is running");
+  res.send(`server is running port ${port}`);
 });
 
 app.all("*", (req, res, next) => {

@@ -1,7 +1,9 @@
+const isAgent = require("../../middlewares/isAgent");
+const verifyToken = require("../../middlewares/verifyToken");
 const Properties = require("../../models/Properties");
 const router = require("express").Router();
 
-router.put("/api/v1/updateProperties/:id", async (req, res) => {
+router.put("/api/v1/updateProperties/:id",verifyToken,isAgent, async (req, res) => {
   const id = req.params.id;
   const data = req.body;
   const query = { _id: id };

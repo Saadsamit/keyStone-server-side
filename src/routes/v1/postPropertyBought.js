@@ -1,8 +1,10 @@
 const router = require("express").Router();
 const Wishlist = require("../../models/wishlist");
 const PropertyBought = require("../../models/PropertyBought");
+const verifyToken = require("../../middlewares/verifyToken");
+const isClient = require("../../middlewares/isClient");
 
-router.post("/api/v1/post-PropertyBought", async (req, res) => {
+router.post("/api/v1/post-PropertyBought",verifyToken,isClient, async (req, res) => {
   const data = req.body;
   const query = { _id: data.wishlistId };
   const findQuery = { propertyId: data.propertyId, userEmail: data.userEmail };

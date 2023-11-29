@@ -1,7 +1,8 @@
+const verifyToken = require("../../middlewares/verifyToken");
 const User = require("../../models/User");
 const router = require("express").Router();
 
-router.put("/api/v1/updateUser/:email", async (req, res) => {
+router.put("/api/v1/updateUser/:email",verifyToken, async (req, res) => {
   const email = req.params.email;
   const data = req.body
   const query = { email: email };

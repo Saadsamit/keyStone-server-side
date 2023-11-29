@@ -1,7 +1,8 @@
 const router = require("express").Router();
+const verifyToken = require("../../middlewares/verifyToken");
 const Review = require("../../models/Review");
 
-router.delete("/api/v1/deleteReview/:id", async (req, res) => {
+router.delete("/api/v1/deleteReview/:id",verifyToken, async (req, res) => {
   const id = req.params.id;
   let query = {
     _id: id,
