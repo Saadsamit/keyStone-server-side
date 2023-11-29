@@ -41,6 +41,10 @@ const PropertiesSchema = new Schema({
     type: String,
     default: "pending",
   },
+  advertise:{
+    type: Boolean,
+    default: false,
+  }
 });
 
 const Propertie = model("Propertie", PropertiesSchema);

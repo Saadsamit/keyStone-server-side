@@ -30,6 +30,9 @@ const updatePropertie = require('./routes/v1/updatePropertie');
 const RequestedProperties = require('./routes/v1/RequestedProperties');
 const getSoldPropertie = require('./routes/v1/getSoldPropertie');
 const putRequesed = require('./routes/v1/putRequesed');
+const adminManageProperties = require('./routes/v1/adminManageProperties');
+const adminAdvertiseProperty = require('./routes/v1/adminAdvertiseProperty');
+const getAdvertise = require('./routes/v1/getAdvertise');
 const applyMiddlewares = require("./middlewares");
 
 applyMiddlewares(app);
@@ -58,6 +61,9 @@ app.use(updatePropertie)
 app.use(RequestedProperties)
 app.use(getSoldPropertie)
 app.use(putRequesed)
+app.use(adminManageProperties)
+app.use(adminAdvertiseProperty)
+app.use(getAdvertise)
 app.use(getReview)
 app.get("/api", (req, res) => {
   res.send("server is running");
