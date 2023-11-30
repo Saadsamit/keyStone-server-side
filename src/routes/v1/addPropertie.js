@@ -12,5 +12,4 @@ router.post("/api/v1/newPropertie",verifyToken,isAgent, async (req, res) => {
     res.send({ error: error });
   }
 });
-
 module.exports = router;

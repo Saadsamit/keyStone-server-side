@@ -1,11 +1,11 @@
 const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
-
+// "http://localhost:5173",
 const applyMiddlewares = (app)=>{
     app.use(
         cors({
-          origin: ["http://localhost:5173"],
+          origin: ["https://keystone-4eb5f.web.app","https://keystone-4eb5f.firebaseapp.com"],
           credentials: true,
         })
       );
